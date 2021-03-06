@@ -17,5 +17,14 @@ def training(prof):
     return render_template('training.html', engineer_prof=engineer_prof)
 
 
+@app.route('/list_prof/<list_type>')
+def list_prof(list_type):
+    prof_list = ["Инженер-исследователь", "Пилот", "Строитель", "Экзобиолог",
+                 "Врач", "Инженер по терраформированию", "Климатолог", "Специалист по радиационной защите",
+                 "Астрогеолог", "Гляциолог", "Инженер жизнеобеспечения", "Метеоролог",
+                 "Оператор марсохода", "Киберинженер", "Штурман", "Пилот дронов"]
+    return render_template('list_prof.html', prof_list=prof_list, list_type=list_type)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
