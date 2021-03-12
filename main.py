@@ -42,10 +42,16 @@ def answer():
                            answers=answers)
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login')
 def login():
     form = LoginForm()
     return render_template('login.html', title='Аварийный доступ', form=form)
+
+
+@app.route('/distribution')
+def distribution():
+    astronaut_list = ["Ридли Скотт", "Энди Уир", "Марк Уотни", "Венката Капур", "Тедди Сандерс", "Шон Бин"]
+    return render_template('distribution.html', astronaut_list=astronaut_list)
 
 
 if __name__ == '__main__':
