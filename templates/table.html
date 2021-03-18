@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <center><h2>Оформление каюты</h2></center>
+        <div class="row">
+            <div class="col-sm border bg-secondary text-light">
+                Цвет стен
+            </div>
+            <div class="col-sm border bg-secondary text-light">
+                Эмблема
+            </div>
+        </div>
+        <div class="row">
+            {% if sex == "male" and age < 21 %}
+                <div class="col border" style="height: 500px; background-color: #b0c4de"></div>
+                <div class="col border">
+                    <img src="/static/img/little_alien.jpg" style="height: 500px; width: 300px"/>
+                </div>
+            {% elif sex == "male" and age >= 21 %}
+                <div class="col border" style="height: 500px; background-color: #007ff0"></div>
+                <div class="col border">
+                    <img src="/static/img/big_alien.jpg" style="height: 500px; width: 300px"/>
+                </div>
+            {% elif sex == "female" and age < 21 %}
+                <div class="col border" style="height: 500px; background-color: #ffa07a"></div>
+                <div class="col border">
+                    <img src="/static/img/little_alien.jpg" style="height: 500px; width: 300px"/>
+                </div>
+            {% elif sex == "female" and age >= 21 %}
+                <div class="col border" style="height: 500px; background-color: #ff4500"></div>
+                <div class="col border">
+                    <img src="/static/img/big_alien.jpg" style="height: 500px; width: 300px"/>
+                </div>
+            {% endif %}
+        </div>
+{% endblock %}
